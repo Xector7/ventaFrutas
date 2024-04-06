@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+   >
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/fruitCard"
+        android:layout_width="192dp"
+        android:layout_height="304dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:cardCornerRadius="8dp"
+        android:layout_marginTop="16dp"
+        app:cardElevation="20dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/naranja"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+           <TextView
+               android:id="@+id/textProduct"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintStart_toStartOf="parent"
+               android:textSize="18dp"
+               app:layout_constraintTop_toBottomOf="@+id/imageView"
+               android:text="Naranja"
+
+               />
+           <TextView
+               android:id="@+id/usd"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               app:layout_constraintTop_toBottomOf="@+id/textProduct"
+               app:layout_constraintStart_toStartOf="@id/textProduct"
+               app:layout_constraintEnd_toStartOf="@+id/textPrice"
+               android:layout_marginTop="20dp"
+               android:text="$-"
+               android:textSize="32dp"
+               android:textColor="@color/green"
+
+              />
+            <TextView
+                android:id="@+id/textPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/textProduct"
+                app:layout_constraintStart_toEndOf="@id/usd"
+                app:layout_constraintEnd_toEndOf="@id/textProduct"
+                android:text="700"
+                android:layout_marginTop="20dp"
+                android:textSize="32dp"
+                android:textColor="@color/green"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <Spinner
+        android:id="@+id/fruitList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fruitCard"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp"
+
+        />
+    <EditText
+        android:id="@+id/textSale"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="0"
+        app:layout_constraintTop_toBottomOf="@+id/fruitList"
+        app:layout_constraintBottom_toTopOf="@+id/btnSale"
+        app:layout_constraintStart_toStartOf="@id/btnSale"
+        app:layout_constraintEnd_toEndOf="@id/btnSale"
+        app:layout_constraintEnd_toStartOf="off"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"/>
+    <EditText
+        android:id="@+id/textOff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="0%"
+        app:layout_constraintTop_toBottomOf="@+id/fruitList"
+        app:layout_constraintBottom_toTopOf="@+id/btnOff"
+        app:layout_constraintStart_toStartOf="@id/btnOff"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="@id/btnOff"
+        />
+
+    <EditText
+        android:id="@+id/textAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="0"
+        app:layout_constraintTop_toBottomOf="@+id/fruitList"
+        app:layout_constraintBottom_toTopOf="@+id/btnAdd"
+        app:layout_constraintStart_toStartOf="@id/btnAdd"
+        app:layout_constraintEnd_toEndOf="@id/btnAdd"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"/>
+    <Button
+        android:id="@+id/btnSale"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Vender"
+        app:layout_constraintTop_toBottomOf="@+id/textSale"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnOff"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="40dp"
+        android:backgroundTint="@color/green"
+        android:elevation="20dp"
+        />
+    <Button
+        android:id="@+id/btnOff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Descuento"
+        app:layout_constraintTop_toBottomOf="@+id/textOff"
+        app:layout_constraintStart_toEndOf="@id/btnSale"
+        app:layout_constraintEnd_toStartOf="@+id/btnSale"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/red"
+
+        />
+    <Button
+        android:id="@+id/btnAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Agregar"
+        app:layout_constraintTop_toBottomOf="@+id/textAdd"
+        app:layout_constraintStart_toEndOf="@+id/btnOff"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/bg"
+        />
+
+
+    <TextView
+        android:id="@+id/textStock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Stock"
+        app:layout_constraintStart_toStartOf="@id/btnSale"
+        app:layout_constraintTop_toBottomOf="@id/btnSale"
+        android:layout_marginTop="40dp"
+        android:textSize="24dp"
+
+
+        />
+    <TextView
+        android:id="@+id/numStock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/btnOff"
+        app:layout_constraintStart_toStartOf="@id/btnOff"
+
+        android:text="243"
+        android:textSize="24dp"
+        android:layout_marginTop="40dp"
+
+
+        />
+    <TextView
+        android:id="@+id/textTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total"
+        app:layout_constraintStart_toStartOf="@id/textStock"
+        app:layout_constraintTop_toBottomOf="@id/textStock"
+        android:layout_marginTop="40dp"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        />
+    <TextView
+        android:id="@+id/numTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        app:layout_constraintStart_toStartOf="@id/numStock"
+        app:layout_constraintTop_toBottomOf="@id/textStock"
+        android:layout_marginTop="40dp"
+        android:textSize="24dp"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
